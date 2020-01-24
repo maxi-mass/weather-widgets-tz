@@ -3,8 +3,12 @@
   height: 100vh;
   max-width: 960px;
   margin: 0 auto;
+  padding-top: 20px;
 }
 
 .main-content {
   min-height: 70vh;
+}
+.find {
+  display: flex;
 }

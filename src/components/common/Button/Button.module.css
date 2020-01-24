@@ -1,0 +1,10 @@
+.button {
+  border: 1px solid black;
+}
+.button button {
+  border: none;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  cursor: pointer;
+}

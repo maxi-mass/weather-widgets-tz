@@ -2,3 +2,19 @@
   padding-left: 15px;
   padding-right: 15px;
 }
+
+table {
+  width: 100%;
+  border: 1px solid gray;
+  padding-left: 10px;
+  border-collapse: collapse
+}
+
+thead {
+  border: 1px solid gray;
+}
+
+td {
+  padding: 10px;
+  padding-left: 15px;
+}

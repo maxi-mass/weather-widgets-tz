@@ -9,6 +9,13 @@
 .main-content {
   min-height: 70vh;
 }
+
 .find {
   display: flex;
+}
+
+.message {
+  color: gray;
+  margin-top: 20px;
+  bottom: 20px;
 }

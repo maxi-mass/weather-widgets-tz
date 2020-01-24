@@ -8,10 +8,19 @@ import {
 } from "../types";
 
 const initialState = {
-  cart: [],
-  goods: [],
-  cartTotal: 0,
-  sumTotal: 0
+  data: {
+    all: [
+      { name: 'Moscow', id: 524901, temp: -4.06, status: 'active' },
+      { name: "Saratov", id: 498677, temp: -6.67, status: 'deleted' }
+    ],
+    active: [
+      { name: 'Moscow', id: 524901, temp: -4.06, status: 'active' }
+    ],
+    deleted: [
+      { name: "Saratov", id: 498677, temp: -6.67, status: 'deleted' }
+    ]
+  },
+  message: 'По данному запросу ничего не найдено'
 };
 
 export const weatherReducer = (state = initialState, action) => {

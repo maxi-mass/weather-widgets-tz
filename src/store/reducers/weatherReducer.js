@@ -4,29 +4,36 @@ import {
   RETURN_FROM_REMOVED,
   UPDATE,
   LIFT_UP,
-  LOWER_DOWN
+  LOWER_DOWN,
+  SET_MESSAGE
 } from "../types";
 
 const initialState = {
   data: {
-    all: [
-      { name: 'Moscow', id: 524901, temp: -4.06, status: 'active' },
-      { name: "Saratov", id: 498677, temp: -6.67, status: 'deleted' }
-    ],
-    active: [
-      { name: 'Moscow', id: 524901, temp: -4.06, status: 'active' }
-    ],
-    deleted: [
-      { name: "Saratov", id: 498677, temp: -6.67, status: 'deleted' }
-    ]
+    all: [],
+    active: [],
+    deleted: []
   },
-  message: 'По данному запросу ничего не найдено'
+  message: ''
 };
 
 export const weatherReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD: {
-      return state;
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          all: [
+            ...state.data.all.filter(item => item.id !== action.payload.id),
+            { ...action.payload, ix: state.data.all.length + 1 },
+          ],
+          active: [
+            ...state.data.active.filter(item => item.id !== action.payload.id),
+            { ...action.payload, ix: state.data.active.length + 1 },
+          ]
+        }
+      }
     }
     case REMOVE: {
       return state;
@@ -42,6 +49,12 @@ export const weatherReducer = (state = initialState, action) => {
     }
     case LOWER_DOWN: {
       return state;
+    }
+    case SET_MESSAGE: {
+      return {
+        ...state,
+        message: action.payload
+      }
     }
     default:
       return state;

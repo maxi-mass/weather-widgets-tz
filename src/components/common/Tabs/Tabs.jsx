@@ -5,9 +5,10 @@ import Tab from "./Tab/Tab";
 import styles from "./Tabs.module.css";
 
 const Tabs = () => {
-  const all = useSelector(state => state.weather.data.all);
-  const active = useSelector(state => state.weather.data.active);
-  const deleted = useSelector(state => state.weather.data.deleted);
+  const data = useSelector(state => state.weather.data);
+  data.sort((item1, item2) => {
+    return item1.ix - item2.ix;
+  });
 
   return (
     <div className={styles.tabs}>
@@ -24,18 +25,14 @@ const Tabs = () => {
       </div>
       <div className={styles.tabs_contents}>
         <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => <Tab data={all} status={"all"} />}
-          />
+          <Route exact path="/" render={() => <Tab data={data} />} />
           <Route
             path="/active"
-            render={() => <Tab data={active} status={"active"} />}
+            render={() => <Tab data={data} status={"active"} />}
           />
           <Route
             path="/deleted"
-            render={() => <Tab data={deleted} status={"deleted"} />}
+            render={() => <Tab data={data} status={"deleted"} />}
           />
         </Switch>
       </div>

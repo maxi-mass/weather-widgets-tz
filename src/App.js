@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./App.css";
-import Tabs from "./components/common/Tabs/Tabs";
+import Tabs from "./components/Tabs/Tabs";
 import TextInput from "./components/common/TextInput/TextInput";
 import Button from "./components/common/Button/Button";
 import { addCity } from "./store/actions/weatherActions";

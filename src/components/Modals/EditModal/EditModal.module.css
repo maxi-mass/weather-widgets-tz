@@ -1,0 +1,23 @@
+.edit_modal_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.edit_modal_inputs > div {
+  margin-top: 8px;
+}
+
+.edit_modal_buttons {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.edit_modal_buttons > div {
+  margin-left: 10px;
+}
+
+.edit_modal_buttons > div:first-child {
+  margin-left: 0;
+}

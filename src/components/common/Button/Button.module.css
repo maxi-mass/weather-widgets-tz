@@ -1,10 +1,19 @@
 .button {
-  border: 1px solid black;
+  border: 2px solid black;
 }
 .button button {
+  padding-left: 20px;
+  padding-right: 20px;
   border: none;
   height: 100%;
   width: 100%;
   background-color: transparent;
   cursor: pointer;
+  font-family: "FiraSansMedium";
+  font-size: 17px;
+  transition: background-color 0.2s linear;
+}
+.button button:hover {
+  transition: background-color 0.2s linear;
+  background-color: #fcfaf7;
 }

@@ -13,6 +13,9 @@
 .find {
   display: flex;
 }
+.find > div {
+  margin-left: 10px;
+}
 
 .message {
   color: gray;

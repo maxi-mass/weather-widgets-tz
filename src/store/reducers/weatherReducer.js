@@ -55,7 +55,16 @@ export const weatherReducer = (state = initialState, action) => {
     }
 
     case UPDATE: {
-      return state;
+      return {
+        ...state,
+        data: state.data.map(item => {
+          if (item.id === action.payload.id) {
+            item.name = action.payload.name;
+            item.temp = action.payload.temp;
+          }
+          return item;
+        })
+      };
     }
 
     case LIFT_UP: {

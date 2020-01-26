@@ -1,0 +1,36 @@
+table {
+  width: 100%;
+  border: 1px solid gray;
+  padding-left: 10px;
+  border-collapse: collapse;
+}
+
+thead {
+  border: 1px solid gray;
+}
+
+td {
+  padding: 10px;
+  padding-left: 15px;
+}
+
+.action_button {
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+}
+
+.action_button div {
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+.action_button div:hover {
+  border-bottom: 1px solid gray;
+}
+
+.action_button div img {
+  height: 100%;
+}
